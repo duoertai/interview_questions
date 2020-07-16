@@ -18,7 +18,7 @@ public class Solution {
         if (text == null) {
             return new ArrayList<>();
         }
-        if (text.length() < SEGMENT_LENGTH) {
+        if (text.length() <= SEGMENT_LENGTH) {
             List<String> res = new ArrayList<>();
             res.add(text);
             return res;
