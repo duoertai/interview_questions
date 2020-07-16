@@ -1,0 +1,6 @@
+given 2 strings, str1, str2
+str1 is a subsequence of str2 if all elements in str1 occur in str2 (doesn't have to be contiguous)
+
+now given 2 strings, s and t, t is a subsequence of s , find all missing words and return in the original order
+
+s and t are a sentence of space-separated words
