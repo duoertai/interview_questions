@@ -1,0 +1,2 @@
+given an integer array and a target value
+find number of all distinct pairs that sum to this value
