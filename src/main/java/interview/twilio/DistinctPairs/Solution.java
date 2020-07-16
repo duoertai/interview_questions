@@ -11,22 +11,26 @@ public class Solution {
         int left = 0;
         int right = nums.length - 1;
 
-        Set<String> set = new HashSet<>();
 
         int count = 0;
 
         while(left < right) {
             if(nums[left] + nums[right] == target) {
-                String s = "" + nums[left] + "," + nums[right];
-                if(!set.contains(s)) {
-                    count++;
-                    set.add(s);
-                }
+                count++;
                 left++;
+                while(left < right && nums[left] == nums[left - 1])
+                    left++;
+                right--;
+                while(left < right && nums[right] == nums[right + 1])
+                    right--;
             } else if(nums[left] + nums[right] < target) {
                 left++;
+                while(left < right && nums[left] == nums[left - 1])
+                    left++;
             } else {
                 right--;
+                while(left < right && nums[right] == nums[right + 1])
+                    right--;
             }
         }
 
