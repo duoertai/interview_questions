@@ -1,0 +1,2 @@
+a sub-sequence of contiguous elements in the array, or sub-array
+sum of the sub-sequence is divisible by k
