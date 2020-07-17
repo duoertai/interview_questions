@@ -1,0 +1,6 @@
+given a list of employee information (employee id, name, boss id)
+print org chart
+
+note:
+top level employee reports to himself
+print org chart is to print from top level, each employee and his reports
