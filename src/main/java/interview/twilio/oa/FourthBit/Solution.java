@@ -1,4 +1,4 @@
-package interview.twilio.FourthBit;
+package interview.twilio.oa.FourthBit;
 
 public class Solution {
     private static final int FOUR = 4;

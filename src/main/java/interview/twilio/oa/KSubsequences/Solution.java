@@ -1,4 +1,4 @@
-package interview.twilio.KSubsequences;
+package interview.twilio.oa.KSubsequences;
 
 public class Solution {
     public static int getNumOfKSubsequences(int[] nums, int k) {

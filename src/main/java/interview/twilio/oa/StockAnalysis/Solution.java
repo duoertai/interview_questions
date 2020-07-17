@@ -1,4 +1,4 @@
-package interview.twilio.StockAnalysis;
+package interview.twilio.oa.StockAnalysis;
 
 import com.google.common.collect.ImmutableList;
 

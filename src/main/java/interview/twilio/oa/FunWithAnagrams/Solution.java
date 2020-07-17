@@ -1,4 +1,4 @@
-package interview.twilio.FunWithAnagrams;
+package interview.twilio.oa.FunWithAnagrams;
 
 import com.google.common.collect.ImmutableList;
 

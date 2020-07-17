@@ -1,8 +1,6 @@
-package interview.twilio.DistinctPairs;
+package interview.twilio.oa.DistinctPairs;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Solution {
     public static int findNumberOfDistinctPairs(int[] nums, int target) {

@@ -1,4 +1,4 @@
-package interview.twilio.SmsSplitting;
+package interview.twilio.oa.SmsSplitting;
 
 import java.util.ArrayList;
 import java.util.List;

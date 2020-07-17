@@ -1,7 +1,6 @@
-package interview.twilio.VanityNumberSearch;
+package interview.twilio.oa.VanityNumberSearch;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 
 import java.util.*;
 
