@@ -1,0 +1,2 @@
+given a list of integer, each number stands for the height of the building at the index location
+from each building look to the right, write a function to output the highest building that each building can see
