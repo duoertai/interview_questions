@@ -1,0 +1,1 @@
+given a string, return the longest continuous repeating char
