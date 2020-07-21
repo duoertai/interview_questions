@@ -2,5 +2,7 @@ given a list of employee information (employee id, name, boss id)
 print org chart
 
 note:
-top level employee reports to himself
+top level employee reports to 0
 print org chart is to print from top level, each employee and his reports
+
+more: direct report stay right below its manager
