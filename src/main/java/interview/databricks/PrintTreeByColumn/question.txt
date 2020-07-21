@@ -1,0 +1,12 @@
+give a binary tree, print it column and column, left to right
+
+example:
+    a
+   b c
+    d e
+   f
+  g
+
+print
+
+g bf ad c e
