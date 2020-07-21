@@ -28,7 +28,7 @@ public class Solution {
             if (e.managerId.equals("0"))
                 tops.add(e.id);
         }
-        
+
         for(String id: map.keySet()) {
             Employee e = map.get(id);
             if (!e.managerId.equals("0"))
