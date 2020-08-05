@@ -1,31 +1,38 @@
 package interview.pinterest.DesignHitCounter;
 
-import java.util.LinkedList;
-
 class HitCounter {
-    private LinkedList<Integer> list;
-    private static final int range = 300;
+
+    private int[] ts;
+    private int[] hits;
 
     /** Initialize your data structure here. */
     public HitCounter() {
-        this.list = new LinkedList<>();
+        this.ts = new int[300];
+        this.hits = new int[300];
     }
 
     /** Record a hit.
      @param timestamp - The current timestamp (in seconds granularity). */
     public void hit(int timestamp) {
-        this.list.offerFirst(timestamp);
-        while(list.peekLast() <= timestamp - range)
-            list.pollLast();
+        int index = timestamp % 300;
+        if(ts[index] == timestamp) {
+            hits[index]++;
+        } else {
+            ts[index] = timestamp;
+            hits[index] = 1;
+        }
     }
 
     /** Return the number of hits in the past 5 minutes.
      @param timestamp - The current timestamp (in seconds granularity). */
     public int getHits(int timestamp) {
-        while(list.size() > 0 && list.peekLast() <= timestamp - range)
-            list.pollLast();
+        int res = 0;
+        for(int i = 0; i < 300; i++) {
+            if(timestamp - ts[i] < 300)
+                res += hits[i];
+        }
 
-        return list.size();
+        return res;
     }
 }
 
