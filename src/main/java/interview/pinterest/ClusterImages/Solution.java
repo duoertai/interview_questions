@@ -68,8 +68,7 @@ public class Solution {
         for(String image: graph.keySet()) {
             Set<String> next = graph.get(image);
             for(String n: next) {
-                if(!graph.get(n).contains(image))
-                    graph.get(n).add(image);
+                graph.get(n).add(image);
             }
         }
 
