@@ -56,6 +56,58 @@ public class Solution {
         return i;
     }
 
+    public static List<List<String>> clusterImageBfs(Map<String, List<String>> map) {
+        Set<String> visited = new HashSet<>();
+        List<List<String>> res = new ArrayList<>();
+        Map<String, HashSet<String>> graph = new HashMap<>();
+
+        for(String image: map.keySet()) {
+            graph.put(image, new HashSet<>(map.get(image)));
+        }
+
+        for(String image: graph.keySet()) {
+            Set<String> next = graph.get(image);
+            for(String n: next) {
+                if(!graph.get(n).contains(image))
+                    graph.get(n).add(image);
+            }
+        }
+
+        for(String image: graph.keySet()) {
+            if(!visited.contains(image))
+                bfs(graph, visited, res, new ArrayList<>(), image);
+        }
+
+        return res;
+    }
+
+    private static void bfs(Map<String, HashSet<String>> map, Set<String> visited, List<List<String>> res, List<String> cluster, String curr) {
+        LinkedList<String> queue = new LinkedList<>();
+        queue.offer(curr);
+
+        while(!queue.isEmpty()) {
+            String temp = queue.poll();
+            visited.add(temp);
+            cluster.add(temp);
+
+            if(map.containsKey(temp)) {
+                Set<String> next = map.get(temp);
+                for(String n: next) {
+                    if(!visited.contains(n)) {
+                        map.get(n).remove(temp);
+                        queue.offer(n);
+                    }
+                }
+            }
+        }
+
+        res.add(cluster);
+    }
+
+    public static List<List<String>> clusterImageDfs(Map<String, List<String>> map) {
+        return null;
+    }
+
     public static void main(String[] args) {
         Map<String, List<String>> map = new HashMap<>();
         map.put("A", Arrays.asList("B", "F"));
@@ -66,7 +118,7 @@ public class Solution {
         map.put("F", Arrays.asList());
         map.put("G", Arrays.asList("F"));
 
-        List<List<String>> res = clusterImage(map);
+        List<List<String>> res = clusterImageBfs(map);
         for(List<String> r: res) {
             for(String s: r)
                 System.out.print(s + " ");
