@@ -1,0 +1,2 @@
+given a list of strings
+return the longest common prefix shared by at least 2 strings
