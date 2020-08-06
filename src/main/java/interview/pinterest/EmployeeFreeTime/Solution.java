@@ -54,4 +54,36 @@ class Solution {
 
         return res;
     }
+
+    public List<Interval> employeeFreeTimeHeap(List<List<Interval>> schedule) {
+        List<Interval> res = new ArrayList<>();
+        PriorityQueue<int[]> queue = new PriorityQueue<int[]>(schedule.size(), new Comparator<int[]>() {
+            public int compare(int[] i1, int[] i2) {
+                return i1[2] - i2[2];
+            }
+        });
+
+        int end = Integer.MAX_VALUE;
+        for(int i = 0; i < schedule.size(); i++) {
+            if(schedule.get(i) != null && schedule.get(i).size() != 0) {
+                queue.offer(new int[] {i, 0, schedule.get(i).get(0).start, schedule.get(i).get(0).end});
+
+                end = Math.min(end, schedule.get(i).get(0).end);
+            }
+        }
+
+        while(queue.size() > 0) {
+            int[] temp = queue.poll();
+            if(end < temp[2]) {
+                res.add(new Interval(end, temp[2]));
+            }
+
+            end = Math.max(end, temp[3]);
+
+            if(temp[1] + 1 < schedule.get(temp[0]).size())
+                queue.offer(new int[] {temp[0], temp[1] + 1, schedule.get(temp[0]).get(temp[1] + 1).start, schedule.get(temp[0]).get(temp[1] + 1).end});
+        }
+
+        return res;
+    }
 }
