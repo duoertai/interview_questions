@@ -1,0 +1,10 @@
+use run length encoding to encode a string with any ascii character
+not allowed to use delimiter
+
+ans:
+the only thing that we need to be concerned with is digits
+since it makes it confusing to tell which part is run length and which part is char
+digit could be 0-9, but the count of digit could be 1-infinity
+we can put a length of run length before run length and use a 0 to separate for example
+1111111111222233
+1201021043102
