@@ -1,0 +1,2 @@
+given a list of images and similar its similar images
+return cluster of similar images

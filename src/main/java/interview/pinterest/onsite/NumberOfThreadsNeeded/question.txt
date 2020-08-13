@@ -1,0 +1,3 @@
+given a string and a target string
+1. check if it is possible to output target string by input string with multiple threads
+2. what is the min number of threads
